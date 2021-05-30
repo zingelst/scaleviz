@@ -1,0 +1,496 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <select name="rootkey" id="rootkey" onchange="onShowLastType()">
+            <option value="C">C</option>
+            <option value="C#">C#</option>
+            <option value="D">D</option>
+            <option value="Db">Db</option>
+            <option value="E">E</option>
+            <option value="Eb">Eb</option>
+            <option value="F">F</option>
+            <option value="F#">F#</option>
+            <option value="G">G</option>
+            <option value="Gb">Gb</option>
+            <option value="A">A</option>
+            <option value="Ab">Ab</option>
+            <option value="B">B</option>
+            <option value="Bb">Bb</option>
+        </select>
+<!--        These get filled in from the scales map in the script below -->
+        <select name="scale" id="scale" onChange="onScale()"> </select>
+        <button name="scale_btn" onclick="onScale()">Scale!</button>
+        <button name="play_scale_btn" onclick="onPlayScale()">Play Scale!</button>
+        <select name="chord" id="chord" onChange="onChord()"></select>
+        <button name="chord_btn" onclick="onChord()">Show Chord!</button>
+        <button name="play_chord_btn" onclick="onPlayChord()">Play Chord!</button>
+        <button name="reset" onclick="onReset()">Reset</button><br>
+        <!--        <object type="image/svg+xml" data="piano_3octave.svg" id="piano" width="1500"></object> -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100%"
+   height="auto"
+   viewBox="0 0 135 35"
+   version="1.1"
+   id="piano"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="piano_3octave.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.9270209"
+     inkscape:cx="280.07484"
+     inkscape:cy="135.99206"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1798"
+     inkscape:window-height="1198"
+     inkscape:window-x="638"
+     inkscape:window-y="538"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="2.3643029" y="1.7891226" width="6.0854168" height="31.75"
+       id="key0" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="8.4497194" y="1.7891226" width="6.0854168" height="31.75"
+       id="key2" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="14.535136" y="1.7891226" width="6.0854168" height="31.75"
+       id="key4" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="20.620552" y="1.7891226" width="6.0854168" height="31.75"
+       id="key5" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="26.705969" y="1.7891226" width="6.0854168" height="31.75"
+       id="key7" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="32.791386" y="1.7891226" width="6.0854168" height="31.75"
+       id="key9" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="38.876801" y="1.7891226" width="6.0854168" height="31.75"
+       id="key11" />
+    <rect style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       x="6.1566629" y="1.7891226" width="3.4395833" height="21.166666"
+       id="key1" />
+    <rect style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       x="13.388607" y="1.7891226" width="3.4395833" height="21.166666"
+       id="key3" />
+    <rect style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       x="24.126282" y="1.7891226" width="3.4395833" height="21.166666"
+       id="key6" />
+    <rect style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       x="31.005449" y="1.7891226" width="3.4395833" height="21.166666"
+       id="key8" />
+    <rect style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       x="38.016907" y="1.7891226" width="3.4395833" height="21.166666"
+       id="key10" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="44.962219" y="1.7891226" width="6.0854168" height="31.75"
+       id="key12" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="51.047634" y="1.7891226" width="6.0854168" height="31.75"
+       id="key14" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="57.133053" y="1.7891226" width="6.0854168" height="31.75"
+       id="key16" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="63.218468" y="1.7891226" width="6.0854168" height="31.75"
+       id="key17" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="69.303886" y="1.7891226" width="6.0854168" height="31.75"
+       id="key19" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="75.389305" y="1.7891226" width="6.0854168" height="31.75"
+       id="key21" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="81.474716" y="1.7891226" width="6.0854168" height="31.75"
+       id="key23" />
+    <rect style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       x="48.754578" y="1.7891226" width="3.4395833" height="21.166666"
+       id="key13" />
+    <rect style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       x="55.986523" y="1.7891226" width="3.4395833" height="21.166666"
+       id="key15" />
+    <rect style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       x="66.724197" y="1.7891226" width="3.4395833" height="21.166666"
+       id="key18" />
+    <rect style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       x="73.603363" y="1.7891226" width="3.4395833" height="21.166666"
+       id="key20" />
+    <rect style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       x="80.614822" y="1.7891226" width="3.4395833" height="21.166666"
+       id="key22" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="87.560135" y="1.7891226" width="6.0854168" height="31.75"
+       id="key24" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="93.645546" y="1.7891226" width="6.0854168" height="31.75"
+       id="key26" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="99.730965" y="1.7891226" width="6.0854168" height="31.75"
+       id="key28" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="105.81638" y="1.7891226" width="6.0854168" height="31.75"
+       id="key29" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="111.9018" y="1.7891226" width="6.0854168" height="31.75"
+       id="key31" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="117.98721" y="1.7891226" width="6.0854168" height="31.75"
+       id="key33" />
+    <rect style="fill:#ffffff;stroke:#000000;stroke-width:0.264583"
+       x="124.07263" y="1.7891226" width="6.0854168" height="31.75"
+       id="key35" />
+    <rect style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       x="91.352493" y="1.7891226" width="3.4395833" height="21.166666"
+       id="key25" />
+    <rect style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       x="98.584435" y="1.7891226" width="3.4395833" height="21.166666"
+       id="key27" />
+    <rect style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       x="109.32211" y="1.7891226" width="3.4395833" height="21.166666"
+       id="key30" />
+    <rect style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       x="116.20128" y="1.7891226" width="3.4395833" height="21.166666"
+       id="key32" />
+    <rect style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       x="123.21274" y="1.7891226" width="3.4395833" height="21.166666"
+       id="key34" />
+  </g>
+</svg>
+        <script>
+            // Can be scale or chord, whatever the user selected last
+            // if we change the root key, we will color the keys based
+            // on whatever the user last did.
+            var lastShowType = "scale";
+            var piano = document.getElementById("piano");
+
+            // All of the keys mapped to the Chromatic index
+            let rootmap = new Map();
+            rootmap["C"] = 0; // C# = 1
+            rootmap["D"] = 2; // Db = 1, D# = 3
+            rootmap["E"] = 4; // Eb = 3, E# = 5 (F)
+            rootmap["F"] = 5; // Fb = 4, F# = 6
+            rootmap["G"] = 7; // Gb = 6, G# = 8
+            rootmap["A"] = 9; // Ab = 8, A# = 10
+            rootmap["B"] = 11; // Bb = 10, B# = 12 (C)
+            // Base indices of all black keys
+            var blacks = [1,3,6,8,10];
+
+            // T = 3, W = 2, H = 1 - How many half steps to move up
+            var scales = {
+                "major": ["Major", "WWHWWWH"],
+                "nat_minor":["Minor", "WHWWHWW"],
+                "min_pent": ["Minor Pentatonic", "TWWTW"],
+                "blues": ["Blues", "TWHHTW"],
+                "maj_pent": ["Major Pentatonic", "WWTWT"],
+                "harm_minor": ["Harmonic Minor", "WHWWHTH"],
+                "mel_minor": ["Melodic Minor", "WHWWWWH"],
+                "dorian": ["Dorian", "WHWWWHW"],
+                "phrygian": ["Phrygian", "HWWWHWW"],
+                "lydian": ["Lydian", "WWWHWWH"],
+                "mixolydian": ["Mixolydian", "WWHWWHW"],
+                "aeolian": ["Aeolian", "WHWWHWW"],
+                "locrian": ["Locrian", "HWWHWWW"],
+                "whole": ["Whole Tone", "WWWWWW"]
+            };
+
+            // Stick the scales into the scale dropdown list
+            var scaleList = document.getElementById("scale");
+            for(var scaleVal in scales) {
+                var opt = document.createElement("option");
+                opt.innerHTML = scales[scaleVal][0];
+                opt.value = scaleVal;
+                scaleList.add(opt);
+            }
+
+            var chords = {
+                "major": ["Major", [0,4,7]],
+                "minor": ["Minor", [0,3,7]],
+                "fifth": ["Fifth", [0,7]],
+                "sus2": ["Sus2", [0,2,7]],
+                "sus4": ["Sus4", [0,5,7]],
+                "diminished": ["Diminished", [0,3,6]],
+                "augmented": ["Augmented", [0,4,8]],
+                "fiveninth": ["FiveNingth", [0,5,9]],
+                "majseven": ["Major Seventh", [0,4,7,11]],
+                "minseven": ["Minor Seventh", [0,3,7,10]],
+                "domseven": ["Dominant Seventh", [0,4,7,10]]
+            };
+            // Stick the chords into the chord dropdown
+            var chordList = document.getElementById("chord");
+            for(var chordVal in chords) {
+                var opt = document.createElement("option");
+                opt.innerHTML = chords[chordVal][0];
+                opt.value = chordVal;
+                chordList.add(opt);
+            }
+
+            let noteFreq = {
+                0:261.625565300598634,  // C
+                1:277.182630976872096,  // C#
+                2:293.664767917407560,  // D
+                3:311.126983722080910,  // D#
+                4:329.627556912869929,  // E
+                5:349.228231433003884,  // F
+                6:369.994422711634398,  // F#
+                7:391.995435981749294,  // G
+                8:415.304697579945138,  // G#
+                9:440.000000000000000,  // A
+                10:466.163761518089916, // A#
+                11:493.883301256124111,  // B
+                // Second octave
+                12:523.251130601197269,
+                13:554.365261953744192,
+                14:587.329535834815120,
+                15:622.253967444161821,
+                16:659.255113825739859,
+                17:698.456462866007768,
+                18:739.988845423268797,
+                19:783.990871963498588,
+                20:830.609395159890277,
+                21:880.000000000000000,
+                22:932.327523036179832,
+                23:987.766602512248223,
+                // Third octave
+                24:1046.502261202394538
+            };
+
+            let audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            let mainGainNode = audioContext.createGain();
+            mainGainNode.connect(audioContext.destination);
+            mainGainNode.gain.value = 0.5;
+
+            function playTone(freq) {
+                let osc = audioContext.createOscillator();
+                osc.connect(mainGainNode);
+                osc.type = "sine";
+                osc.frequency.value = freq;
+                osc.start();
+
+                return osc;
+            }
+
+            function playToneTimed(freq, duration) {
+                var osc = playTone(freq);
+                console.log(freq);
+                window.setTimeout(function() {
+                    osc.stop();
+                    delete osc;
+                }, duration);
+            }
+
+            function playChord(root, notes, seconds) {
+                var oscs = [];
+                for(let index of notes) {
+                    osc = playTone(noteFreq[root+index]);
+                    oscs.push(osc);
+                }
+                window.setTimeout(function () {
+                    for(let osc of oscs) {
+                        osc.stop();
+                        delete osc;
+                    }
+                }, seconds*1000);
+            }
+
+            function onPlayScale() {
+                var rootkeyelem = document.getElementById("rootkey");
+                var rootkey = rootkeyelem.options[rootkeyelem.selectedIndex].value;
+                var rootkeyindex = getRootAsIndex(rootkey);
+                var scaletype = getScaleType();
+                // We just want the scale steps, so use C as root (starts at 0, otherwise
+                // we wrap around the note offsets from 0->11) and just offset that
+                // with our root not.
+                var scale = genScale("C", scaletype);
+                // Scales only encompass one octave, so add the last note of the scale
+                // in the next octave
+                scale.push(scale[0]+12);
+                console.log(rootkey, scaletype, rootkeyindex, scale);
+
+                function* scaleGen() {
+
+                    for(let note of scale) {
+                        console.log(rootkeyindex+note);
+                        playToneTimed(noteFreq[rootkeyindex+note]/2, 500);
+                        yield note;
+                    }
+                    yield -1;
+                }
+                var noteGen = scaleGen();
+                function xyz() {
+                    var note = noteGen.next().value;
+                    if (note >= 0) {
+                        window.setTimeout(xyz, 500);
+                    }
+                }
+                xyz();
+            }
+
+            // Functions that highlight the scale notes are below
+            function getSteps(scale) {
+                // Convert the String scale to half-steps
+                var steps = scale.split('').map((step) =>
+                    (step == "H" ? 1 :
+                    (step == "W" ? 2 : 3))
+                );
+                return steps;
+            }
+            function getKeyFromIndex(idx) {
+               // TODO?
+            }
+            function getRootAsIndex(root) {
+                // Takes the name of a Root note and converts it to a key index
+                // from C=0 -> B=11
+                var rootKey = rootmap[root.toUpperCase().charAt(0)];
+                if (root.length==2) {
+                    if(root[1] == "#") { // Sharps go up one
+                        rootKey = rootKey + 1;
+                    } else if (root[1] == 'b') {
+                        rootKey = rootKey - 1; // Flats go down one
+                    }
+                    // If we do something silly like a C flat or B sharp, wrap around
+                    if (rootKey < 0) rootKey = 11;
+                    if (rootKey > 11) rootKey = 0;
+                }
+                return rootKey;
+            }
+
+            function genScale(root, scale)
+            {
+                // Generates a scale from a list of step offsets
+                var steps = getSteps(scale);
+                var rootkey = getRootAsIndex(root);
+                var scale = new Array();
+                for(var step of steps) {
+                    scale.push(rootkey);
+                    rootkey = (rootkey + step) % 12;
+                }
+                return scale;
+            }
+
+            function getScaleType() {
+                // Gets the scale name from the scale dropdown list
+                // and returns the scale array from the scale map using that name
+                var scaleelem = document.getElementById("scale");
+                var scalename = scaleelem.options[scaleelem.selectedIndex].value;
+                return scales[scalename][1];
+            }
+            function resetKeys() {
+                // Reset the colors
+                for(var i=0; i<36; i++) {
+                    let keyelem = piano.getElementById("key"+i);
+                    keyelem.style.stroke = "#000000";
+                    if (blacks.indexOf(i % 12) == -1) {
+                        // Not in blacks, must be a white key
+                        keyelem.style.fill = "#FFFFFF";
+                    } else {
+                        keyelem.style.fill = "#000000";
+                    }
+                }
+            }
+            function onReset() {
+                resetKeys();
+            }
+            function onScale() {
+                lastShowType = "scale";
+                // Clear the colors
+                resetKeys()
+                // Highlight the keys
+                var rootkeyelem = document.getElementById("rootkey");
+                var rootkey = rootkeyelem.options[rootkeyelem.selectedIndex].value;
+                var rootkeyindex = getRootAsIndex(rootkey);
+                var scaletype = getScaleType();
+                var scale = genScale(rootkey, scaletype);
+                for(var i=0; i<36; i++) {
+                    let keyelem = piano.getElementById("key"+i);
+                    if (scale.indexOf(i % 12) == -1) {
+                        let keyelem = piano.getElementById("key"+i);
+                        // Not in the scale? Make the key grey
+                        keyelem.style.fill="#777777";
+                        keyelem.style.stroke="#AAAAAA";
+                    } else {
+                        if (blacks.indexOf(i % 12) == -1) {
+                            // White key
+                            keyelem.style.fill="#FFFFFF";
+                        } else {
+                            keyelem.style.fill="#000000";
+                        }
+                    }
+                    if (i % 12 == rootkeyindex) {
+                        keyelem.style.fill="#FFFF66";
+                    }
+                }
+            }
+
+            function onChord() {
+                lastShowType = "chord";
+                // Clear the colors
+                resetKeys()
+                // Highlight the keys of the chord
+                var rootkeyelem = document.getElementById("rootkey");
+                var rootkey = rootkeyelem.options[rootkeyelem.selectedIndex].value;
+                var rootkeyindex = getRootAsIndex(rootkey);
+                // Get the selected chord type
+                var chordElem = document.getElementById("chord");
+                var chord = chordElem.options[chordElem.selectedIndex].value;
+                console.log(rootkey, rootkeyindex, chord);
+                for (var key_offset of chords[chord][1]) {
+                    var theKey = rootkeyindex + key_offset;
+                    let keyelem = piano.getElementById("key"+theKey);
+                    keyelem.style.fill = "#FF0000";
+                }
+            }
+            function onPlayChord() {
+                var rootkeyelem = document.getElementById("rootkey");
+                var rootkey = rootkeyelem.options[rootkeyelem.selectedIndex].value;
+                var rootkeyindex = getRootAsIndex(rootkey);
+                // Get the selected chord type
+                var chordElem = document.getElementById("chord");
+                var chord = chordElem.options[chordElem.selectedIndex].value;
+
+                playChord(rootkeyindex, chords[chord][1], 1);
+            }
+
+            function onShowLastType() {
+                if (lastShowType == "scale") {
+                    onScale();
+                } else {
+                    onChord();
+                }
+            }
+        </script>
+    </body>
+</html>
